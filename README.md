@@ -82,3 +82,7 @@ The agent needs browser controls that can interact with the [Taipei police porta
 - Add support for other cities and counties, with separate portal mappings, verification flows, and reporting requirements. No release dates are committed yet.
 
 Do not use the Taipei workflow for another jurisdiction until support for that jurisdiction is explicitly documented.
+
+## License
+
+[MIT](LICENSE) — Copyright (c) 2026 Bohan Chen.
