@@ -17,6 +17,18 @@ This is an experimental agent skill, not a standalone app or an official police 
 
 You can use original media directly; the Road Report frontend and ZIP export are optional. This repository contains instructions, not a bundled browser controller or evidence-processing application.
 
+## Tested environments
+
+User-reported results during testing:
+
+| Setup | Result |
+| --- | --- |
+| Codex app + built-in browser | Working in tested workflow |
+| Dot + Codex app + built-in browser | Working in tested workflow |
+| VPS / remote sandboxes | Not usable in tested setups |
+
+Use a local browser for the police-portal workflow. Remote environments encountered portal-access restrictions; these results do not establish that every VPS or remote IP is blocked. Other agent/browser combinations are not yet verified, and these results are not a guarantee for every case or future portal version.
+
 ## Get started
 
 Clone this repository on the machine where you will run your agent:
