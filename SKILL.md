@@ -1,6 +1,6 @@
 ---
 name: reporting-taipei-traffic
-description: 'Taipei traffic/parking violation reporting (台北交通違規檢舉、帮我检举违规). Use with original photos, videos, or a case ZIP and short requests such as "幫我檢舉違停" or "report/submit this traffic violation". Includes preparation and authorized police-form filling, uploads, and submission. A generic "submit the form" needs traffic-report context; unrelated forms and other jurisdictions are outside scope.'
+description: 'Taipei traffic/parking violation reporting (台北交通違規檢舉). Use with original photos, videos, or a case ZIP and short requests such as "幫我檢舉違停" or "report/submit this traffic violation". Includes preparation and authorized police-form filling, uploads, and submission. A generic "submit the form" needs traffic-report context; unrelated forms and other jurisdictions are outside scope.'
 ---
 
 # Reporting Taipei traffic violations
