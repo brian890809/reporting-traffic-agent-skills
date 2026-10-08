@@ -11,11 +11,12 @@ This is an experimental agent skill, not a standalone app or an official police 
 
 - Inspects original evidence and available capture-time/GPS metadata.
 - Prepares Traditional Chinese report details and identifies missing facts.
-- Proposes address details from existing mapped information, clearly marking unverified house numbers.
+- Looks up a candidate address from evidence GPS with coordinate-sharing permission, without requiring the Road Report server. Reuses existing mapped information and clearly marks unverified house numbers.
 - Guides an agent through identity/email verification, form entry, attachment checks, and explicitly authorized submission.
 - Keeps preparation, uploads, declaration acceptance, and final submission as separate authorization steps.
 
 You can use original media directly; the Road Report frontend and ZIP export are optional. This repository contains instructions, not a bundled browser controller or evidence-processing application.
+Case packages use `agent.txt`; the skill also accepts uppercase `AGENT.txt` and legacy `INSTINCT.txt` without repacking.
 
 ## Tested environments
 
