@@ -2,8 +2,8 @@
 
 Agent instructions for preparing traffic-violation reports from original photos, videos, or a Road Report case ZIP, then completing an authorized browser workflow on the police reporting portal.
 
-> **Still in testing. Currently supports Taipei City (臺北市) only.**
-> New Taipei City (新北市) and other cities/counties are not yet supported. Support for other cities is on the roadmap.
+> **Still in testing. Supports Taipei City (臺北市) and New Taipei City (新北市).**
+> Other cities/counties are not yet supported. The installed skill name remains `reporting-taipei-traffic` for compatibility.
 
 This is an experimental agent skill, not a standalone app or an official police service. Browser compatibility, portal changes, and evidence quality can affect results. Review the facts before authorizing submission. A submitted report does not guarantee police acceptance or a finding of a violation.
 
@@ -20,11 +20,11 @@ Case packages use `agent.txt`; the skill also accepts uppercase `AGENT.txt` and 
 
 ## Tested environments
 
-User-reported results during testing:
+Observed and user-reported results during testing:
 
 | Setup | Result |
 | --- | --- |
-| Codex app + built-in browser | Working in tested workflow |
+| Codex app + built-in browser | Taipei City submission and two New Taipei City submissions reached receipt pages on 2026-10-12 |
 | Dot + Codex app + built-in browser | Working in tested workflow |
 | VPS / remote sandboxes | Not usable in tested setups |
 
@@ -46,7 +46,8 @@ Start with a preparation-only dry run:
 ```text
 Read SKILL.md and follow the reporting-taipei-traffic skill.
 Use the original photos in /absolute/path/to/photos.
-Prepare a Taipei City traffic report only. Do not open the police
+Prepare a Taipei City or New Taipei City traffic report, according to
+the confirmed incident location. Do not open the police
 form, upload files, send verification emails, or submit anything.
 Show one concise case review and any missing facts.
 ```
@@ -58,7 +59,8 @@ You can replace the photo path with a video or a Road Report case ZIP. Once the 
 After reviewing the prepared case:
 
 ```text
-Fill the Taipei police form and upload the reviewed original files.
+Fill the appropriate Taipei or New Taipei police form and upload the
+reviewed original files.
 Do NOT submit. Prefer your available built-in browser integration;
 you do not need to use my existing browser window.
 Check portal access, local-file upload support, and whether I can
@@ -67,7 +69,7 @@ Do not install tools or change permissions.
 Verify the fields and attachments, then show one concise final review.
 ```
 
-The agent needs browser controls that can interact with the [Taipei police portal](https://prsweb.tcpd.gov.tw/), attach local files, and allow you to complete verification. Web search alone is insufficient. Remote browsers may be blocked; a built-in browser is not necessarily local. Codex-specific workflow notes are in [references/codex-browser.md](references/codex-browser.md); availability varies by installation.
+The agent needs browser controls that can interact with the [Taipei police portal](https://prsweb.tcpd.gov.tw/) or [New Taipei police portal](https://tvrs.ntpd.gov.tw/), attach local files, and allow you to complete verification. Web search alone is insufficient. Remote browsers may be blocked; a built-in browser is not necessarily local. Codex-specific workflow notes are in [references/codex-browser.md](references/codex-browser.md); availability varies by installation. [New Taipei workflow notes](references/new-taipei.md) cover its declaration, email verification, file formats, CAPTCHA, and receipts.
 
 ## Privacy and limitations
 
@@ -79,10 +81,10 @@ The agent needs browser controls that can interact with the [Taipei police porta
 
 ## Roadmap
 
-- Continue testing and improving the Taipei City workflow.
+- Continue testing and improving the Taipei City and New Taipei City workflows.
 - Add support for other cities and counties, with separate portal mappings, verification flows, and reporting requirements. No release dates are committed yet.
 
-Do not use the Taipei workflow for another jurisdiction until support for that jurisdiction is explicitly documented.
+Choose the documented workflow for the incident jurisdiction; do not reuse one city’s form mappings or verification assumptions for another.
 
 ## License
 

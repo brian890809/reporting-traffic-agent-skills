@@ -16,7 +16,7 @@ Use this reference for the Codex browser integration. Read the current tool docu
 - The browser's read-only DOM representation may replace phone/email and other `tel` input values with `<redacted>`. An equality comparison against the real value then fails even after successful entry. Recognize masking first; check displayed counters, field constraints, validation state, and the subsequent verification result. Do not keep retyping, probe for unmasked values, or call the field wrong merely because the inspection API masked it. Distinguish exact verification from checks that only establish length and absence of errors.
 - Inspect the verification response through a scoped status element or redacted notice. A visible `驗證成功` is enough to continue. If the user authorized requesting the email, click once and wait for a sent/success/error state before asking for intervention. Do not wait for an assumed `確認` dialog when no such control exists. An ambiguous outcome calls for inspection, not another email request.
 
-### Returning users and first-time email verification
+### Taipei City: returning users and first-time email verification
 
 The initial completed browser run used an identity/email pair that had already been verified; it did not exercise first-time email completion. A subsequent user test on 2026-10-06 confirmed that clicking the email confirmation link unblocked the original browser tab without restarting it. Public portal code inspected on the same date shows two branches:
 
@@ -31,7 +31,7 @@ Public source evidence (re-check if the portal changes): [form bundle](https://p
 
 - Scope reads to the upload card, incident card, active dropdown, or declaration control. Avoid a whole-page DOM/accessibility snapshot once identity is present. Batch known independent fields, then verify selected values and errors in the relevant section.
 - Inspect `readOnly` and live options before filling a selector. A read-only district selector needs a click and an actual option selection. A date/hour/minute/road autocomplete can be filtered, but its result must be selected. Use accessible labels and freshly observed attributes; generated element IDs can change between sessions.
-- Read the upload documentation once. Start the file-chooser listener before clicking the upload control, confirm multiple-file support, then attach both byte-identical originals together. Verify count, rows, loaded thumbnails, filename, size, and capture time. Successful attachment rows may represent client-side file preparation; do not claim server receipt without an acknowledgment. Do not re-add files after a timeout without inspecting those rows.
+- Read the upload documentation once. Start the file-chooser listener before clicking the upload control, confirm multiple-file support, then attach the reviewed byte-identical originals supported by that portal. Verify count, rows, loaded thumbnails, filename, size, and capture time. Successful attachment rows may represent client-side file preparation; do not claim server receipt without an acknowledgment. Do not re-add files after a timeout without inspecting those rows.
 
 ## Avoid identity in screenshots
 
@@ -43,3 +43,11 @@ Public source evidence (re-check if the portal changes): [form bundle](https://p
 ## Complete one review
 
 Show plate, local incident time, confirmed full address, selected category, reviewed description, attachment status, and the declaration's substance together. Preserve the user's stop point. An instruction to accept the displayed declaration but not submit is actionable: check it, verify the state, keep `送出` untouched, and leave the tab open. Only request a missing fact, a genuinely needed verification step, or a required action-time confirmation; do not ask the user to supervise ordinary controls.
+
+## CAPTCHA and submission results
+
+For New Taipei, use [the city-specific workflow](new-taipei.md). Read the CAPTCHA from the image already rendered in the working form; opening its image URL separately can generate a different challenge. Follow the browser tool's action-time confirmation requirement, carrying forward an applicable confirmation for the same action without inventing additional approvals.
+
+After an authorized submit click, inspect scoped validation, active JavaScript dialogs, and the success area. A result may arrive after the click returns, and the URL may remain unchanged. Use the documented dialog API; do not assume it exposes a message-reading method. If a dialog cannot be safely inspected, do not accept an unknown consequential confirmation. Dismiss an informational alert when appropriate and inspect the resulting page.
+
+Return only the case number and a non-sensitive success statement. Do not print raw dialog text or take a broad receipt screenshot: some portals put lookup credentials beside the case number. Capture only a verified safe receipt region, save it outside the repository, and mark the result tab as a deliverable before ending the turn. For mixed-case work, preserve each pending tab and never resubmit a case with an existing success receipt merely because another case remains unfinished.
